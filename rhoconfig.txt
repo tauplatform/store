@@ -22,7 +22,7 @@ LastVisitedPage = ''
 # Sync server url. Typically this will look like 'http://<hostname>:<port>'
 # For example: 'http://localhost:9292'
 #syncserver = 'http://localhost:9292'
-syncserver = 'http://rhodes-store-server.herokuapp.com'
+syncserver = 'http://tau-store-server.herokuapp.com'
 
 sync_poll_interval=0
 

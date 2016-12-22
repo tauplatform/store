@@ -70,7 +70,7 @@ class ProductController < Rho::RhoController
     @product.save
 
     # immediately send to the server and show index after sync
-    Product.setNotification("/app/Product/show_index_after_sync", caller_request_hash_to_query)
+    Product.set_notification("/app/Product/show_index_after_sync", caller_request_hash_to_query)
     Rho::RhoConnectClient.doSyncSource('Product')
 
     @response['headers']['Wait-Page'] = 'true'
@@ -83,7 +83,7 @@ class ProductController < Rho::RhoController
     @product.update_attributes(@params['product'])
 
     # immediately send to the server and show index after sync
-    Product.setNotification("/app/Product/show_index_after_sync", caller_request_hash_to_query)
+    Product.set_notification("/app/Product/show_index_after_sync", caller_request_hash_to_query)
     Rho::RhoConnectClient.doSyncSource('Product')
 
     @response['headers']['Wait-Page'] = 'true'
@@ -96,7 +96,7 @@ class ProductController < Rho::RhoController
     @product.destroy
 
     # immediately send to the server and show index after sync
-    Product.setNotification("/app/Product/show_index_after_sync", caller_request_hash_to_query)
+    Product.set_notification("/app/Product/show_index_after_sync", caller_request_hash_to_query)
     Rho::RhoConnectClient.doSyncSource('Product')
 
     @response['headers']['Wait-Page'] = 'true'
