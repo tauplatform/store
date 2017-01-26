@@ -1,10 +1,14 @@
 #sdk: c:/projects/rhodes
-sdk: ../rhodes
+#sdk: ../rhodes
+
+#capabilities:
+#  - push
 
 sdkversion: 3.2.0
 name: store
 version: 1.0
-vendor: rhomobile
+vendor: tautechnologies
+rho_app_id: com.tautechnologies.store
 build: debug
 applog: rholog.txt
 bbver: 6.0
@@ -14,13 +18,20 @@ wm:
 
 iphone:
   configuration: Debug
-  sdk: iphonesimulator6.0
+  sdk: iphoneos10.2
   emulator: 4.0.1
-  provisionprofile:
-  codesignidentity:
-  entitlements:
+  #provisionprofile:
+  #codesignidentity:
+  #entitlements:
+  #http_connection_domains: ["tau-store-server.herokuapp.com"]
+  BundleIdentifier: com.tautechnologies.store
+  info_plist_data:
+    NSAppTransportSecurity:
+      NSAllowsArbitraryLoads: true
 
-extensions: ["json", "rhoconnect-client"] 
+
+#extensions: ["json", "rhoconnect-client", "applePush"]
+extensions: ["json", "rhoconnect-client"]
 
 android:
   version: 2.2
